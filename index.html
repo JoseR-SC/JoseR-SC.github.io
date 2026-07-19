@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Rafael | Estudiante de Cibernética</title>
     <style>
-        /* ===== RESET Y ESTILOS BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +29,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* ===== HEADER ===== */
         header {
             text-align: center;
             padding-bottom: 30px;
@@ -131,7 +129,6 @@
             box-shadow: 0 0 20px rgba(123, 47, 252, 0.4);
         }
 
-        /* ===== SOBRE MÍ ===== */
         .section {
             margin: 40px 0;
         }
@@ -160,7 +157,6 @@
             font-weight: 600;
         }
 
-        /* ===== ESTUDIOS ===== */
         .study-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -190,7 +186,6 @@
             border-radius: 15px;
         }
 
-        /* ===== TECNOLOGÍAS ===== */
         .tech-grid {
             display: flex;
             flex-wrap: wrap;
@@ -224,72 +219,31 @@
         .tech-item.js { border-color: #f7df1e; color: #f7df1e; }
         .tech-item.git { border-color: #f05032; }
 
-        /* ===== PROYECTOS ===== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .projects-pending {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px dashed rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
             margin: 20px 0;
         }
 
-        .project-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
+        .projects-pending .icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #00d4ff;
-            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.1);
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .project-title {
-            font-size: 1.4rem;
+        .projects-pending h3 {
             color: #00d4ff;
+            font-size: 1.8rem;
             margin-bottom: 10px;
         }
 
-        .project-desc {
+        .projects-pending p {
             color: #a0aec0;
-            margin: 10px 0;
+            font-size: 1.1rem;
         }
 
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
-        }
-
-        .project-tech span {
-            background: rgba(0, 212, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            color: #00d4ff;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: #7b2ffc;
-            transform: translateX(5px);
-        }
-
-        /* ===== OBJETIVOS ===== */
         .goals-list {
             list-style: none;
             padding: 0;
@@ -309,7 +263,6 @@
             content: "🎯 ";
         }
 
-        /* ===== CONTACTO ===== */
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -338,7 +291,6 @@
             transform: scale(1.05);
         }
 
-        /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding-top: 30px;
@@ -352,29 +304,17 @@
             color: #ff6b6b;
         }
 
-        footer .cuba-flag {
-            display: inline-block;
-        }
-
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
             }
-            
             h1 {
                 font-size: 2rem;
             }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .badge-container {
                 flex-direction: column;
                 align-items: center;
             }
-            
             .contact-info {
                 flex-direction: column;
                 align-items: center;
@@ -386,18 +326,15 @@
                 width: 100px;
                 height: 100px;
             }
-            
             .tech-grid {
                 gap: 8px;
             }
-            
             .tech-item {
                 padding: 6px 15px;
                 font-size: 0.85rem;
             }
         }
 
-        /* ===== ANIMACIONES ===== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -413,11 +350,6 @@
             animation: fadeInUp 0.8s ease;
         }
 
-        .project-card {
-            animation: fadeInUp 0.6s ease;
-        }
-
-        /* Scrollbar personalizado */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -434,37 +366,19 @@
 
     <div class="container">
 
-        <!-- ===== HEADER ===== -->
         <header>
-            <!-- 🔴 CAMBIA ESTA FOTO: Pon tu foto o avatar -->
             <img src="https://i.pravatar.cc/300?img=11" alt="Foto de José Rafael" class="avatar">
-            
             <h1>👋 Hola, soy José Rafael</h1>
-            
             <p class="subtitle">🚀 Estudiante de Cibernética | Desarrollador en formación</p>
-            
-            <p class="location">
-                📍 <span>Santa Clara, Cuba</span> 🇨🇺
-            </p>
-            
-            <!-- BOTONES DE CONTACTO -->
+            <p class="location">📍 <span>Santa Clara, Cuba</span> 🇨🇺</p>
             <div class="badge-container">
-                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="badge badge-linkedin">
-                    💼 LinkedIn
-                </a>
-                <a href="https://github.com/tu-usuario" target="_blank" class="badge badge-github">
-                    🐙 GitHub
-                </a>
-                <a href="mailto:joser.sc005@gmail.com" class="badge badge-email">
-                    ✉️ Email
-                </a>
-                <a href="#" class="badge badge-portfolio">
-                    🌐 Portafolio
-                </a>
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="badge badge-linkedin">💼 LinkedIn</a>
+                <a href="https://github.com/tu-usuario" target="_blank" class="badge badge-github">🐙 GitHub</a>
+                <a href="mailto:joser.sc005@gmail.com" class="badge badge-email">✉️ Email</a>
+                <a href="#" class="badge badge-portfolio">🌐 Portafolio</a>
             </div>
         </header>
 
-        <!-- ===== SOBRE MÍ ===== -->
         <section class="section">
             <h2 class="section-title">📖 Sobre mí</h2>
             <p class="about-text">
@@ -486,7 +400,6 @@
             </p>
         </section>
 
-        <!-- ===== FORMACIÓN ACADÉMICA ===== -->
         <section class="section">
             <h2 class="section-title">🎓 Formación Académica</h2>
             <div class="study-card">
@@ -500,7 +413,6 @@
             </div>
         </section>
 
-        <!-- ===== TECNOLOGÍAS ===== -->
         <section class="section">
             <h2 class="section-title">🛠️ Tecnologías</h2>
             <div class="tech-grid">
@@ -515,64 +427,18 @@
             </div>
         </section>
 
-        <!-- ===== PROYECTOS ===== -->
         <section class="section">
-            <h2 class="section-title">🚀 Proyectos Destacados</h2>
-            <div class="projects-grid">
-
-                <!-- ✅ PROYECTO 1: Calculadora Científica -->
-                <div class="project-card">
-                    <h3 class="project-title">🔢 Calculadora Científica</h3>
-                    <p class="project-desc">
-                        Calculadora con funciones avanzadas: seno, coseno, tangente, logaritmos, 
-                        raíces y operaciones básicas. Interfaz por consola.
-                    </p>
-                    <div class="project-tech">
-                        <span>C++</span>
-                        <span>Matemáticas</span>
-                    </div>
-                    <a href="https://github.com/tu-usuario/calculadora-cientifica" target="_blank" class="project-link">
-                        Ver en GitHub →
-                    </a>
-                </div>
-
-                <!-- ✅ PROYECTO 2: Sistema de Ecuaciones -->
-                <div class="project-card">
-                    <h3 class="project-title">📊 Sistema de Ecuaciones Lineales</h3>
-                    <p class="project-desc">
-                        Programa que resuelve sistemas de ecuaciones 2x2 y 3x3 usando 
-                        métodos de Gauss-Jordan y Cramer. 
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>NumPy</span>
-                        <span>Álgebra Lineal</span>
-                    </div>
-                    <a href="https://github.com/tu-usuario/sistema-ecuaciones" target="_blank" class="project-link">
-                        Ver en GitHub →
-                    </a>
-                </div>
-
-                <!-- ✅ PROYECTO 3: Generador de Contraseñas -->
-                <div class="project-card">
-                    <h3 class="project-title">🔐 Generador de Contraseñas Seguras</h3>
-                    <p class="project-desc">
-                        Genera contraseñas aleatorias con diferentes niveles de seguridad 
-                        (básico, medio, alto) y opción de guardarlas en un archivo.
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Seguridad</span>
-                    </div>
-                    <a href="https://github.com/tu-usuario/generador-passwords" target="_blank" class="project-link">
-                        Ver en GitHub →
-                    </a>
-                </div>
-
+            <h2 class="section-title">🚀 Proyectos</h2>
+            <div class="projects-pending">
+                <div class="icon">📁</div>
+                <h3>Próximamente...</h3>
+                <p>Estoy trabajando en nuevos proyectos que subiré muy pronto.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #718096;">
+                    ⭐ Sígueme en GitHub para no perdértelos
+                </p>
             </div>
         </section>
 
-        <!-- ===== OBJETIVOS ===== -->
         <section class="section">
             <h2 class="section-title">🎯 Objetivos 2026</h2>
             <ul class="goals-list">
@@ -584,35 +450,19 @@
             </ul>
         </section>
 
-        <!-- ===== CONTACTO ===== -->
         <section class="section">
             <h2 class="section-title">📫 Contáctame</h2>
             <div class="contact-info">
-                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="contact-item">
-                    💼 LinkedIn
-                </a>
-                <a href="https://github.com/tu-usuario" target="_blank" class="contact-item">
-                    🐙 GitHub
-                </a>
-                <a href="mailto:joser.sc005@gmail.com" class="contact-item">
-                    ✉️ joser.sc005@gmail.com
-                </a>
-                <span class="contact-item">
-                    📍 Santa Clara, Cuba 🇨🇺
-                </span>
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="contact-item">💼 LinkedIn</a>
+                <a href="https://github.com/tu-usuario" target="_blank" class="contact-item">🐙 GitHub</a>
+                <a href="mailto:joser.sc005@gmail.com" class="contact-item">✉️ joser.sc005@gmail.com</a>
+                <span class="contact-item">📍 Santa Clara, Cuba 🇨🇺</span>
             </div>
         </section>
 
-        <!-- ===== FOOTER ===== -->
         <footer>
-            <p>
-                © 2026 José Rafael · Estudiante de Cibernética · 
-                <span class="cuba-flag">🇨🇺</span> Santa Clara, Cuba
-            </p>
-            <p style="margin-top: 8px; font-size: 0.8rem;">
-                "El único modo de hacer un gran trabajo es amar lo que haces" 
-                — Steve Jobs
-            </p>
+            <p>© 2026 José Rafael · Estudiante de Cibernética · 🇨🇺 Santa Clara, Cuba</p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">"El único modo de hacer un gran trabajo es amar lo que haces" — Steve Jobs</p>
         </footer>
 
     </div>
